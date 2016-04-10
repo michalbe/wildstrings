@@ -24,7 +24,7 @@ var wildstrings = function(string) {
   var missingLetters = '';
   var randomStarter = ~~(Math.random()*5)+2;
   // var output = 'u=' + randomStarter + ';S=String.fromCharCode;a=\'';
-  var output = 'S=String.fromCharCode;a=\'';
+  var output = 'a=\'';
   var output2 = '\'.link();';
   for (var i = 0; i<string.length; i++) {
     if (letters[string[i].toLowerCase()] === undefined) {
