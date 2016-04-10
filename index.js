@@ -7,9 +7,24 @@ for (i = 0; i < defaultString.length; i++ ) {
   letters[defaultString[i]] = i;
 }
 
+var gimmeNewNumberBasedOf = function(nmbr, a) {
+  var max = Math.max(nmbr, a);
+  var min = Math.min(nmbr, a);
+  console.log('input', nmbr, a);
+  console.log('maxmin', max, min);
+  if (max%min === 0) {
+    console.log('jeden', max + '/' + min);
+    return max + '/' + min;
+  } else {
+    var mod = max%min;
+    return max-mod + '/' + min + '+' + mod;
+  }
+
+};
 var wildstrings = function(string) {
   var missingLetters = '';
-  var output = 'S=String.fromCharCode;a=\'';
+  var randomStarter = ~~(Math.random()*5)+2;
+  var output = 'u=' + randomStarter + ';S=String.fromCharCode;a=\'';
   var output2 = '\'.link();';
   for (var i = 0; i<string.length; i++) {
     if (letters[string[i].toLowerCase()] === undefined) {
@@ -25,10 +40,13 @@ var wildstrings = function(string) {
   output += missingLetters;
   output += output2;
   for (i = 0; i<string.length; i++) {
-    output += 'a[' + letters[string[i].toLowerCase()] + ']+';
+    output += 'a[' +
+      gimmeNewNumberBasedOf(letters[string[i].toLowerCase()], randomStarter) +
+      ']+';
+    //randomStarter = letters[string[i].toLowerCase()];
   }
 
   console.log(output);
 };
 
-wildstrings('nosiema');
+wildstrings('hitler');
