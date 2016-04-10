@@ -10,7 +10,14 @@ for (i = 0; i < defaultString.length; i++ ) {
 console.log(letters);
 
 var wildstrings = function(string) {
-  console.log(string);
+  var output = 'S=String.fromCharCode;a=\'siem\'.link();';
+  for (var i = 0; i<string.length; i++) {
+    if (letters[string[i].toLowerCase()] !== undefined) {
+      output += 'a[' + letters[string[i].toLowerCase()] + ']+';
+     }
+  }
+
+  console.log(output);
 };
 
 wildstrings('nosiema');
