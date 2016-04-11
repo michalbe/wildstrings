@@ -10,3 +10,15 @@ a='mclb'.link();a[3*6+2]+a[5*2+4]+a[6*3+3]+a[2*1+1]+a[4*6+2]+a[3*7+1]+a[2*11+1]+
 
 ### Why
 Just for fun.
+
+### How to use
+```
+npm i wildstrings
+```
+then:
+```
+var ws = require('wildstrings');
+
+console.log(ws('hello'));
+
+```
