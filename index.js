@@ -3,9 +3,17 @@
 var letters = {};
 var defaultString = ''.link();
 var i = 0;
-for (i = 0; i < defaultString.length; i++ ) {
-  letters[defaultString[i]] = i;
-}
+var missingLetters = '';
+
+var init = function() {
+  letters = {};
+  defaultString = ''.link();
+  missingLetters = '';
+  i = 0;
+  for (i = 0; i < defaultString.length; i++ ) {
+    letters[defaultString[i]] = i;
+  }
+};
 
 var gimmeNewNumberBasedOn = function(nmbr, a) {
   if (nmbr > a) {
@@ -21,7 +29,7 @@ var gimmeNewNumberBasedOn = function(nmbr, a) {
 };
 
 var wildstrings = function(string) {
-  var missingLetters = '';
+  init();
   var randomStarter = ~~(Math.random()*5)+2;
   // var output = 'u=' + randomStarter + ';S=String.fromCharCode;a=\'';
   var output = 'a=\'';
