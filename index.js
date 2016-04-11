@@ -25,6 +25,8 @@ var gimmeNewNumberBasedOn = function(nmbr, a) {
     }
   } else if (nmbr < a) {
     return a+nmbr + '-' + a;
+  } else {
+    return nmbr;
   }
 };
 
