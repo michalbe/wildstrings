@@ -19,6 +19,6 @@ then:
 ```
 var ws = require('wildstrings');
 
-console.log(ws('hello'));
+console.log(ws('hello')); // a='llo'.link();a[2*1+1]+a[5*3+1]+a[5*4+1]+a[7*3]+a[6*3+4]
 
 ```
