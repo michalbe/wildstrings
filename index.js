@@ -13,11 +13,10 @@ var gimmeNewNumberBasedOf = function(nmbr, a) {
   console.log('input', nmbr, a);
   console.log('maxmin', max, min);
   if (max%min === 0) {
-    console.log('jeden', max + '/' + min);
-    return max + '/' + min;
+    return max/min + '*' + min;
   } else {
     var mod = max%min;
-    return max-mod + '/' + min + '+' + mod;
+    return min + '*' + (max - mod)/min + '+' + mod;
   }
 
 };
@@ -25,6 +24,7 @@ var wildstrings = function(string) {
   var missingLetters = '';
   var randomStarter = ~~(Math.random()*5)+2;
   var output = 'u=' + randomStarter + ';S=String.fromCharCode;a=\'';
+  // var output = 'S=String.fromCharCode;a=\'';
   var output2 = '\'.link();';
   for (var i = 0; i<string.length; i++) {
     if (letters[string[i].toLowerCase()] === undefined) {
@@ -43,10 +43,11 @@ var wildstrings = function(string) {
     output += 'a[' +
       gimmeNewNumberBasedOf(letters[string[i].toLowerCase()], randomStarter) +
       ']+';
-    //randomStarter = letters[string[i].toLowerCase()];
+    randomStarter =  ~~(Math.random()*5)+2;
   }
-
-  console.log(output);
+  output = output.split('');
+  output.pop();
+  console.log(output.join(''));
 };
 
-wildstrings('hitler');
+wildstrings('no hej!');
